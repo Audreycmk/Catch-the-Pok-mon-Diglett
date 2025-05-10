@@ -130,7 +130,16 @@ h1 {
   }
 }
 
-.mole:active {
+/* .mole:active {
   background-color: #8d0028;
   transform: scale(0.8);
+} */
+
+
+.mole:active {
+  transform: scale(2); /* Shrinks the mole */
+  background-image: url('fire-5518_512.gif'); /* Explosion GIF */
+  background-size: cover; /* Ensure the explosion GIF covers the mole */
+  background-position: center; /* Center the explosion inside the mole */
 }
+
