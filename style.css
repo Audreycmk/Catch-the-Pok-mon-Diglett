@@ -1,0 +1,136 @@
+@import url('https://fonts.googleapis.com/css2?family=Julius+Sans+One&display=swap');
+
+@import url('https://fonts.googleapis.com/css2?family=Mina&display=swap');
+
+body {
+  margin: 0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100vh;
+  background: radial-gradient(47.04% 91.01% at 50% 46.45%, rgb(68, 3, 3) 0%, #2e0303 51.44%, #111010 100%);
+  font-family: 'Julius Sans One', sans-serif;
+  flex-direction: column;
+}
+
+h1 {
+  justify-content: center;
+  color: #fff;
+  font-weight: 100;
+  font-size: 24px;
+  text-align: center;
+}
+
+#game-container {
+  display: grid;
+  grid-template-columns: repeat(3, 80px);
+  justify-content: center;
+  gap: 20px;
+  padding: 10px;
+}
+
+.hole {
+  width: 80px;
+  height: 80px;
+  background-color: rgb(84, 79, 77);
+  border-radius: 50%;
+  overflow: hidden;
+  position: relative;
+  box-shadow: inset 0 5px 10px rgba(0, 0, 0, 0.2);
+}
+
+.mole {
+  width: 60px;
+  height: 60px;
+  background-image: url("Pokemon_Diglett.png");
+  border-radius: 50%;
+  position: absolute;
+  bottom: -100%;
+  left: 8px;
+  cursor: pointer;
+  animation: popUpDown 3s infinite ease-in-out;
+}
+
+.hole:nth-child(2) .mole { animation-duration: 2.6s; }
+.hole:nth-child(3) .mole { animation-duration: 1.5s; }
+.hole:nth-child(4) .mole { animation-duration: 2.4s; }
+.hole:nth-child(5) .mole { animation-duration: 3.5s; }
+.hole:nth-child(6) .mole { animation-duration: 2.8s; }
+.hole:nth-child(7) .mole { animation-duration: 2s; }
+.hole:nth-child(8) .mole { animation-duration: 3.8s; }
+.hole:nth-child(9) .mole { animation-duration: 3.1s; }
+
+.scoreboard {
+  font-size: 20px;
+  background: linear-gradient(110deg, #531c1c33 0%, rgba(24, 0, 0, 0.98) 100%);
+  padding: 10px 20px;
+  gap: 20px;
+  color: #fff;
+  border-radius: 15px;
+  border: 2px solid #650101;
+  text-align: center;
+  letter-spacing: 3px;
+  font-family: 'Mina', sans-serif;
+  margin-bottom: 170px;
+}
+
+#startButton {
+  font-family: 'Mina', sans-serif;
+  font-size: 22px;
+  letter-spacing: 8px;
+  padding: 50px 26px;
+  margin-left: 140px;
+  margin-top: 540px;
+  cursor: pointer;
+  border: none;
+  background: radial-gradient(circle at 30% 30%, #1fa31f, #0a4a0a); 
+  color: white;
+  border-radius: 50%;
+  box-shadow: 0 8px 0 #0a4a0a, 0 10px 15px rgba(0, 0, 0, 0.5);
+  transition: all 0.1s ease-in-out;
+  position: absolute;
+}
+
+#startButton:hover {
+  filter: brightness(1.2);
+}
+
+#startButton:active {
+  transform: translateY(8px);
+  box-shadow: 0 4px 0 #0a4a0a, 0 5px 10px rgba(0, 0, 0, 0.4);
+}
+
+
+.machine {
+  position: fixed;
+  left: 0;
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  z-index: -1;
+}
+
+.machine img {
+  max-width: 100%;
+  height: auto;
+  opacity: 0.8;
+}
+
+#pop {
+  position: absolute;
+}
+
+
+@keyframes popUpDown {
+  0%, 100% {
+    bottom: -100%;
+  }
+  50% {
+    bottom: 0;
+  }
+}
+
+.mole:active {
+  background-color: #8d0028;
+  transform: scale(0.8);
+}
